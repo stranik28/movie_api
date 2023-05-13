@@ -52,6 +52,8 @@ def get_movie(title: str):
     # Запрос к API OMDb для получения информации о фильме
     url = f"http://www.omdbapi.com/?t={title}&apikey={API_KEY}"
     response = requests.get(url)
+    if response.status_code != 200:
+        return{"message": "Ошибка с подключением к API"}
     movie_data = response.json()
     if movie_data["Response"] == "False":
         return {"message": "Movie not found"}
