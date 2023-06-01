@@ -5,11 +5,14 @@ on: push
 jobs:
   run:
     runs-on: self-hosted
-    
+
     steps:
     - uses: actions/checkout@v3
       with:
         clean: false
+
+    - name: pwd
+      run: pwd
         
     - name: Run server
       run: docker-compose -f docker-compose.yml up --build -d --remove-orphans
