@@ -1,10 +1,6 @@
 name: Development Compose CI
 
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+on: push
 
 jobs:
   run:
