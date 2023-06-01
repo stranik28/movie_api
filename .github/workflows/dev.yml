@@ -15,7 +15,7 @@ jobs:
       run: pwd
         
     - name: Run server
-      run: docker-compose -f docker-compose.yml up --build -d --remove-orphans
+      run: docker-compose -f docker-compose.yaml up --build -d --remove-orphans
 
 permissions: 
   contents: write
