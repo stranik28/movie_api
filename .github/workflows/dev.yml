@@ -3,19 +3,23 @@ name: Development Compose CI
 on: push
 
 jobs:
-  run:
-    runs-on: self-hosted
+  test:
+    name: Test
+    runs-on: ubuntu:20.04
 
-    steps:
-    - uses: actions/checkout@v3
-      with:
-        clean: false
-
-    - name: pwd
-      run: pwd
+#     steps:
+#     - uses: actions/checkout@v3
+#       with:
+#         clean: false
         
-    - name: Run server
-      run: docker-compose -f docker-compose.yaml up --build -d --remove-orphans
+#     - name: Run server
+#       run: docker-compose -f docker-compose.yaml up --build -d --remove-orphans
 
-permissions: 
-  contents: write
+#     - name: Run tests
+#       run: docker exec -it movie_api_server bash && pytest test_main.py
+
+#   deploy:
+#     name: Deploy
+
+# permissions: 
+#   contents: write

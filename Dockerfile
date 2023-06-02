@@ -7,6 +7,3 @@ ADD . /app
 COPY . /app
 # Install any needed packages specified in requirements.txt
 RUN pip install -r requirements.txt
-
-# Start the app
-CMD ["python3", "main.py"]
