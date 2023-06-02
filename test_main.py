@@ -10,8 +10,9 @@ def test_get_movie():
     response = client.get("/movies/Avengers")
     assert response.status_code == 200
     if type(response.json()) == dict:
-        if response.json()["message"] == "Movie already exists":
-            return
+        if "message" in response.json():
+            if response.json()["message"] == "Movie already exists":
+                return
     data = response.json()
     assert "id" in data
     assert "title" in data
