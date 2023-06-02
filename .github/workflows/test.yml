@@ -52,4 +52,4 @@ jobs:
     - name: Pull and deploy Docker Compose
       run: |
         docker-compose pull
-        docker-compose up -d
+        docker-compose up -d server

@@ -37,13 +37,13 @@ def test_get_movies():
 # Тест для DELETE-запроса /movies/{id}
 def test_delete_movie():
     # Добавление фильма для последующего удаления
-    response = client.get("/movies/She")
+    response = client.get("/movies/The Movie")
     assert response.status_code == 200
     data = response.json()
     if type(response.json()) == dict:
-        if response.json()["message"] == "Movie already exists":
-            return
-        return
+        if "message" in response.json():
+            if response.json()["message"] == "Movie already exists":
+                return
     movie_id = data["id"]
 
 
@@ -63,3 +63,5 @@ def test_delete_movie():
 
 def test_one():
     assert 1 == 1
+def test_six():
+    assert 1 != 2
