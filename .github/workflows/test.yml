@@ -19,7 +19,7 @@ jobs:
     - name: Build and test Docker Compose
       run: |
         docker-compose build
-        docker-compose run --rm tests # Замените "your_service_name" на имя вашего сервиса
+        docker-compose run --rm test # Замените "your_service_name" на имя вашего сервиса
 
   build_and_push:
     runs-on: ubuntu-latest
